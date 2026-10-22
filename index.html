@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rosso Racer | Foo'rmula 1</title>
+  <meta name="description" content="Rosso Racer: a chunky red toy F1 car for little drivers aged 2+. Free shipping, 30-day returns.">
+  <meta property="og:title" content="Rosso Racer | Foo'rmula 1">
+  <meta property="og:description" content="A chunky red toy F1 car for little drivers aged 2+.">
+  <meta property="og:image" content="assets/img/rosso-playroom.jpg">
+  <meta property="og:type" content="product">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Rosso Racer",
+    "description": "A chunky red toy F1 car with a smiling driver block, for little drivers aged 2+.",
+    "video": {"@type": "VideoObject", "name": "Rosso Racer on the play mat", "description": "A child pushes the Rosso Racer along a race track play mat.", "contentUrl": "assets/video/rosso-playroom.mp4", "thumbnailUrl": "assets/video/rosso-playroom-poster.jpg", "uploadDate": "2026-10-22"},
+    "image": ["assets/img/rosso-hero.jpg", "assets/img/rosso-front.jpg", "assets/img/rosso-34.jpg", "assets/img/rosso-playroom.jpg"],
+    "brand": {"@type": "Brand", "name": "Foo'rmula 1"},
+    "offers": {"@type": "Offer", "price": "14.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}
+  }
+  </script>
+</head>
+<body>
+  <div class="promo">Free shipping on every order · 30-day returns</div>
+
+  <header class="site-header">
+    <a class="logo" href="./">Foo'rmula<span>1</span></a>
+    <nav>
+      <a href="#product">Shop</a>
+      <a href="#details">Details</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="cart" aria-label="Cart">Cart <span id="cart-count">0</span></button>
+  </header>
+
+  <main id="product" class="product">
+    <section class="gallery" aria-label="Product images">
+      <div class="main-image">
+        <video id="main-video" src="assets/video/rosso-playroom.mp4" poster="assets/video/rosso-playroom-poster.jpg" autoplay muted loop playsinline aria-label="A child pushes the Rosso Racer along a race track play mat"></video>
+        <img id="main-img" src="assets/img/rosso-playroom.jpg" alt="Rosso Racer toy car on a race track play mat, pushed by a child's hand" hidden>
+      </div>
+      <div class="thumbs" role="list">
+        <button class="thumb video active" data-video="true" aria-label="Play video"><img src="assets/video/rosso-playroom-poster.jpg" alt=""></button>
+        <button class="thumb" data-src="assets/img/rosso-playroom.jpg" data-alt="Rosso Racer toy car on a race track play mat, pushed by a child's hand"><img src="assets/img/rosso-playroom.jpg" alt=""></button>
+        <button class="thumb" data-src="assets/img/rosso-hero.jpg" data-alt="Rosso Racer, three-quarter front view on white"><img src="assets/img/rosso-hero.jpg" alt=""></button>
+        <button class="thumb" data-src="assets/img/rosso-front.jpg" data-alt="Rosso Racer, front view on white"><img src="assets/img/rosso-front.jpg" alt=""></button>
+        <button class="thumb" data-src="assets/img/rosso-34.jpg" data-alt="Rosso Racer, three-quarter side view showing the rear wing"><img src="assets/img/rosso-34.jpg" alt=""></button>
+      </div>
+    </section>
+
+    <section class="buy">
+      <p class="eyebrow">Toddler racing · Ages 2+</p>
+      <h1>Rosso Racer</h1>
+      <p class="price">€14.90</p>
+      <p class="lede">A chunky red race car with a smiling driver who never leaves the pit wall in a bad mood. Big rolling wheels, a proper rear wing, and studs on top so little hands can keep building.</p>
+
+      <ul class="perks">
+        <li>Sized for small hands, no tiny parts</li>
+        <li>Snaps onto big building bricks</li>
+        <li>Rolls smoothly on carpet, floors and play mats</li>
+      </ul>
+
+      <div class="qty-row">
+        <label for="qty">Qty</label>
+        <div class="qty">
+          <button type="button" data-step="-1" aria-label="Decrease quantity">−</button>
+          <input id="qty" type="number" min="1" max="9" value="1">
+          <button type="button" data-step="1" aria-label="Increase quantity">+</button>
+        </div>
+      </div>
+      <button id="add" class="add">Add to cart</button>
+      <p class="ship">In stock · Ships in 1–2 business days</p>
+    </section>
+  </main>
+
+  <section id="details" class="details">
+    <div>
+      <h2>Details</h2>
+      <dl>
+        <dt>Age</dt><dd>2 years and up</dd>
+        <dt>Size</dt><dd>About 12 × 7 × 7 cm</dd>
+        <dt>Pieces</dt><dd>Car body + driver block</dd>
+        <dt>Material</dt><dd>Durable ABS plastic</dd>
+      </dl>
+    </div>
+    <div id="faq">
+      <h2>FAQ</h2>
+      <details><summary>Is it safe for toddlers?</summary><p>Yes. Every piece is too large to swallow, and edges are rounded.</p></details>
+      <details><summary>Does it work with other bricks?</summary><p>The studs on top fit standard large toddler bricks.</p></details>
+      <details><summary>What if it arrives damaged?</summary><p>We replace it for free. Just send us a photo.</p></details>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p><strong>Foo'rmula 1</strong> is a fictional demo store built to test product photography tools. Nothing is for sale. Not affiliated with, sponsored or endorsed by the LEGO Group or Ferrari S.p.A.; any trademarks shown on the toy belong to their owners.</p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const main = document.getElementById('main-img');
+    const video = document.getElementById('main-video');
+    document.querySelectorAll('.thumb').forEach(t => t.addEventListener('click', () => {
+      document.querySelectorAll('.thumb').forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+      const isVideo = !!t.dataset.video;
+      video.hidden = !isVideo;
+      main.hidden = isVideo;
+      if (isVideo) {
+        video.currentTime = 0;
+        video.play();
+      } else {
+        video.pause();
+        main.src = t.dataset.src;
+        main.alt = t.dataset.alt;
+      }
+    }));
+
+    const qty = document.getElementById('qty');
+    document.querySelectorAll('.qty button').forEach(b => b.addEventListener('click', () => {
+      qty.value = Math.min(9, Math.max(1, (+qty.value || 1) + +b.dataset.step));
+    }));
+
+    let count = 0;
+    const toast = document.getElementById('toast');
+    document.getElementById('add').addEventListener('click', () => {
+      count += +qty.value || 1;
+      document.getElementById('cart-count').textContent = count;
+      toast.textContent = 'Added to cart. (Demo store: nothing will be charged.)';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2600);
+    });
+  </script>
+</body>
+</html>
