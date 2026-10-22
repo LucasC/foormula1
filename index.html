@@ -21,7 +21,7 @@
     "description": "A chunky red toy F1 car with a smiling driver block, for little drivers aged 2+.",
     "video": {"@type": "VideoObject", "name": "Rosso Racer on the play mat", "description": "A child pushes the Rosso Racer along a race track play mat.", "contentUrl": "assets/video/rosso-playroom.mp4", "thumbnailUrl": "assets/video/rosso-playroom-poster.jpg", "uploadDate": "2026-10-22"},
     "subjectOf": {"@type": "VideoObject", "name": "Rosso Racer on the start line", "description": "The start lights go out and the Rosso Racer rolls off the line.", "contentUrl": "assets/video/rosso-start-line.mp4", "thumbnailUrl": "assets/video/rosso-start-line-poster.jpg", "uploadDate": "2026-10-22"},
-    "image": ["assets/img/rosso-hero.jpg", "assets/img/rosso-front.jpg", "assets/img/rosso-34.jpg", "assets/img/rosso-playroom.jpg", "assets/img/rosso-start-line.jpg"],
+    "image": ["assets/img/rosso-hero.jpg", "assets/img/rosso-front.jpg", "assets/img/rosso-34.jpg", "assets/img/rosso-playroom.jpg", "assets/img/rosso-kerb.jpg"],
     "brand": {"@type": "Brand", "name": "Foo'rmula 1"},
     "offers": {"@type": "Offer", "price": "14.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}
   }
@@ -47,10 +47,8 @@
         <img id="main-img" src="assets/img/rosso-playroom.jpg" alt="Rosso Racer toy car on a race track play mat, pushed by a child's hand" hidden>
       </div>
       <div class="thumbs" role="list">
-        <button class="thumb video active" data-video="assets/video/rosso-playroom.mp4" data-poster="assets/video/rosso-playroom-poster.jpg" data-alt="A child pushes the Rosso Racer along a race track play mat" aria-label="Play video: on the play mat"><img src="assets/video/rosso-playroom-poster.jpg" alt=""></button>
+        <button class="thumb video active" data-video="true" aria-label="Play video"><img src="assets/video/rosso-playroom-poster.jpg" alt=""></button>
         <button class="thumb" data-src="assets/img/rosso-playroom.jpg" data-alt="Rosso Racer toy car on a race track play mat, pushed by a child's hand"><img src="assets/img/rosso-playroom.jpg" alt=""></button>
-        <button class="thumb video" data-video="assets/video/rosso-start-line.mp4" data-poster="assets/video/rosso-start-line-poster.jpg" data-alt="The start lights go out and the Rosso Racer rolls off the line" aria-label="Play video: start line"><img src="assets/video/rosso-start-line-poster.jpg" alt=""></button>
-        <button class="thumb" data-src="assets/img/rosso-start-line.jpg" data-alt="Rosso Racer on the start line under a toy starting-light gantry"><img src="assets/img/rosso-start-line.jpg" alt=""></button>
         <button class="thumb" data-src="assets/img/rosso-hero.jpg" data-alt="Rosso Racer, three-quarter front view on white"><img src="assets/img/rosso-hero.jpg" alt=""></button>
         <button class="thumb" data-src="assets/img/rosso-front.jpg" data-alt="Rosso Racer, front view on white"><img src="assets/img/rosso-front.jpg" alt=""></button>
         <button class="thumb" data-src="assets/img/rosso-34.jpg" data-alt="Rosso Racer, three-quarter side view showing the rear wing"><img src="assets/img/rosso-34.jpg" alt=""></button>
@@ -82,6 +80,30 @@
     </section>
   </main>
 
+  <section class="story" aria-label="Life with the Rosso Racer">
+    <div class="story-row">
+      <div class="story-media">
+        <video src="assets/video/rosso-start-line.mp4" poster="assets/video/rosso-start-line-poster.jpg" autoplay muted loop playsinline aria-label="The start lights go out and the Rosso Racer rolls off the line"></video>
+      </div>
+      <div class="story-text">
+        <p class="eyebrow">Lights out</p>
+        <h2>Five red lights. One very serious driver.</h2>
+        <p>Count down the lights together, then let the Rosso Racer go. Toddlers love the ritual, and it sneaks in some counting practice on the way to the finish line.</p>
+        <p class="fine">Start gantry and flags shown for play ideas, not included.</p>
+      </div>
+    </div>
+    <div class="story-row flip">
+      <div class="story-media">
+        <img src="assets/img/rosso-kerb.jpg" alt="Rosso Racer close up on a red-and-white racing kerb" loading="lazy">
+      </div>
+      <div class="story-text">
+        <p class="eyebrow">Made for small hands</p>
+        <h2>Chunky, bright and built to bump.</h2>
+        <p>Big rolling wheels, rounded edges and a driver who's always smiling. It survives sofa jumps, table drops and the occasional pit-lane tantrum.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="details" class="details">
     <div>
       <h2>Details</h2>
@@ -101,7 +123,7 @@
   </section>
 
   <footer class="site-footer">
-    <p><strong>Foo'rmula 1</strong> is a fictional demo store built to test product photography tools. Nothing is for sale. Not affiliated with, sponsored or endorsed by the LEGO Group or Ferrari S.p.A.; any trademarks shown on the toy belong to their owners. Start-line scene and video edited from LEGO Group source imagery for testing.</p>
+    <p><strong>Foo'rmula 1</strong> is a fictional demo store built to test product photography tools. Nothing is for sale. Not affiliated with, sponsored or endorsed by the LEGO Group or Ferrari S.p.A.; any trademarks shown on the toy belong to their owners. Start-line video edited from LEGO Group source imagery for testing.</p>
   </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
@@ -116,11 +138,6 @@
       video.hidden = !isVideo;
       main.hidden = isVideo;
       if (isVideo) {
-        if (!video.src.endsWith(t.dataset.video)) {
-          video.src = t.dataset.video;
-          video.poster = t.dataset.poster;
-          video.setAttribute('aria-label', t.dataset.alt);
-        }
         video.currentTime = 0;
         video.play();
       } else {
