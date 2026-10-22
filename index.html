@@ -19,6 +19,7 @@
     "@type": "Product",
     "name": "Rosso Racer",
     "description": "A chunky red toy F1 car with a smiling driver block, for little drivers aged 2+.",
+    "video": {"@type": "VideoObject", "name": "Rosso Racer on the play mat", "description": "A child pushes the Rosso Racer along a race track play mat.", "contentUrl": "assets/video/rosso-playroom.mp4", "thumbnailUrl": "assets/video/rosso-playroom-poster.jpg", "uploadDate": "2026-10-22"},
     "image": ["assets/img/rosso-hero.jpg", "assets/img/rosso-front.jpg", "assets/img/rosso-34.jpg", "assets/img/rosso-playroom.jpg"],
     "brand": {"@type": "Brand", "name": "Foo'rmula 1"},
     "offers": {"@type": "Offer", "price": "14.90", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}
@@ -41,10 +42,12 @@
   <main id="product" class="product">
     <section class="gallery" aria-label="Product images">
       <div class="main-image">
-        <img id="main-img" src="assets/img/rosso-playroom.jpg" alt="Rosso Racer toy car on a race track play mat, pushed by a child's hand">
+        <video id="main-video" src="assets/video/rosso-playroom.mp4" poster="assets/video/rosso-playroom-poster.jpg" autoplay muted loop playsinline aria-label="A child pushes the Rosso Racer along a race track play mat"></video>
+        <img id="main-img" src="assets/img/rosso-playroom.jpg" alt="Rosso Racer toy car on a race track play mat, pushed by a child's hand" hidden>
       </div>
       <div class="thumbs" role="list">
-        <button class="thumb active" data-src="assets/img/rosso-playroom.jpg" data-alt="Rosso Racer toy car on a race track play mat, pushed by a child's hand"><img src="assets/img/rosso-playroom.jpg" alt=""></button>
+        <button class="thumb video active" data-video="true" aria-label="Play video"><img src="assets/video/rosso-playroom-poster.jpg" alt=""></button>
+        <button class="thumb" data-src="assets/img/rosso-playroom.jpg" data-alt="Rosso Racer toy car on a race track play mat, pushed by a child's hand"><img src="assets/img/rosso-playroom.jpg" alt=""></button>
         <button class="thumb" data-src="assets/img/rosso-hero.jpg" data-alt="Rosso Racer, three-quarter front view on white"><img src="assets/img/rosso-hero.jpg" alt=""></button>
         <button class="thumb" data-src="assets/img/rosso-front.jpg" data-alt="Rosso Racer, front view on white"><img src="assets/img/rosso-front.jpg" alt=""></button>
         <button class="thumb" data-src="assets/img/rosso-34.jpg" data-alt="Rosso Racer, three-quarter side view showing the rear wing"><img src="assets/img/rosso-34.jpg" alt=""></button>
@@ -102,11 +105,21 @@
 
   <script>
     const main = document.getElementById('main-img');
+    const video = document.getElementById('main-video');
     document.querySelectorAll('.thumb').forEach(t => t.addEventListener('click', () => {
       document.querySelectorAll('.thumb').forEach(x => x.classList.remove('active'));
       t.classList.add('active');
-      main.src = t.dataset.src;
-      main.alt = t.dataset.alt;
+      const isVideo = !!t.dataset.video;
+      video.hidden = !isVideo;
+      main.hidden = isVideo;
+      if (isVideo) {
+        video.currentTime = 0;
+        video.play();
+      } else {
+        video.pause();
+        main.src = t.dataset.src;
+        main.alt = t.dataset.alt;
+      }
     }));
 
     const qty = document.getElementById('qty');
